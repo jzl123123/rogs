@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "rogs_upstream": {
+      "repository": "fzhiheng/RoGS",
+      "commit": "0f816c66d06a7680d1b16eb52e9a9f764bc6920c",
+      "tree_sha256": "225a8ee56418eb55d41908e3dadf22478c1d0e6f79fedf5149632dfe0ffe36a1"
+    },
+    "diff-gs-depth-alpha": {
+      "repository": "fzhiheng/diff-gs-depth-alpha",
+      "commit": "d533b04788f552d14eaa8e324a17c7720cb9b30c",
+      "archive_sha256": "fb5ddbee7e3c550ad4771af80670b43b0d7645bd3933587a08687b1bceda874d",
+      "tree_sha256": "a1cc313030e4f7e3dc766cc78a97fb839262354c75e0b78dba1c2ca3e67b01b2"
+    },
+    "Mask2Former": {
+      "repository": "facebookresearch/Mask2Former",
+      "commit": "9b0651c6c1d5b3af2e6da0589b719c514ec0d69a",
+      "archive_sha256": "722869057bf2a3dc0c9eeae7c763a35889a433e6728e358b624d259f815c0c8a",
+      "tree_sha256": "35214cd7046940fb36ef076d9a41e839d2676185614c694d5fae153e4af8482a"
+    },
+    "detectron2": {
+      "repository": "facebookresearch/detectron2",
+      "commit": "d1e04565d3bec8719335b88be9e9b961bf3ec464",
+      "archive_sha256": "6bfc0ed99a9df9a7fe6cf2d1e49d1cb036384a7e5cdb87346b180ee1ea65edb8",
+      "tree_sha256": "33915d1527380712f8b2a38f093d3c3f847c3c3fda7917671a8945bb290a2840"
+    },
+    "glm": {
+      "repository": "g-truc/glm",
+      "commit": "5c46b9c07008ae65cb81ab79cd677ecc1934b903",
+      "archive_sha256": "157ccb090c0237835d3f8da09fe055c5c7ad6e7a2225a55c0761524d0815296e",
+      "tree_sha256": "b314eb0ca4b775eabef11cbd0b424127c2594e20d5391b92b668bd03779ae8e9"
+    },
+    "pytorch3d": {
+      "repository": "facebookresearch/pytorch3d",
+      "commit": "75ebeeaea0908c5527e7b1e305fbc7681382db47",
+      "sparse_directories": [
+        "pytorch3d"
+      ],
+      "tree_sha256": "adb517dceb98a085c4303d5029bbeb86becd6aa1db3d35622412814fa04d1e7c"
+    }
+  }
+}
