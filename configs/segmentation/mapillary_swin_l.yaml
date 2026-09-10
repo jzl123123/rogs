@@ -1,0 +1,7 @@
+# Official compatible 65-class model. RoMe/RoGS checkpoint equivalence is UNVERIFIED.
+label_space: mapillary_vistas_65
+config_file: ../../thirdparty/Mask2Former/configs/mapillary-vistas/semantic-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_300k.yaml
+checkpoint: ../../thirdparty/weights/mapillary_swin_l_semantic_90ee2d.pkl
+# Fill from fetch_weights.py output to enforce an expected SHA256.
+checkpoint_sha256: null
+

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rogs-engineering"
+version = "0.1.0"
+description = "Packaged RoGS with pinned local third-party sources and reference-algorithm checks"
+requires-python = ">=3.8"
+dependencies = ["PyYAML>=6,<7"]
+
+[project.scripts]
+rogs = "rogs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

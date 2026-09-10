@@ -1,0 +1,11 @@
+# Mirrors RoGS README's Python/Torch/CUDA recipe. Remote compilation is still required.
+# PyTorch3D 0.7.8's published support range differs; see docs/ENVIRONMENT.md.
+name: rogs
+channels: [conda-forge]
+dependencies:
+  - python=3.8.10
+  - pip=24.3.1
+  - pip:
+      - setuptools==69.5.1
+      - wheel==0.44.0
+

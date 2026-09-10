@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.venv/
+.env
+.DS_Store
+.idea/
+build/
+dist/
+outputs/
+data/
+thirdparty/_build/
+thirdparty/weights/*
+!thirdparty/weights/README.md
