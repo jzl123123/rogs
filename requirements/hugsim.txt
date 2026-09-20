@@ -1,0 +1,16 @@
+# HUGSIM ground-only stack; use a separate Python 3.11 + torch 2.4.1/cu118 env.
+numpy==1.26.4
+scipy==1.15.2
+Pillow==11.2.1
+opencv-python==4.11.0.86
+PyYAML==6.0.2
+omegaconf==2.3.0
+plyfile==1.1
+open3d==0.18.0
+torchmetrics==1.7.1
+tensorboard==2.19.0
+protobuf==3.20.2
+tqdm==4.67.1
+jaxtyping==0.3.1
+rich==13.9.4
+ninja==1.11.1.4

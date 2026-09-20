@@ -1,0 +1,5 @@
+# Existing HUGSIM nuScenes preprocessing: RGB, Cityscapes semantics, camera poses,
+# and ground_points3d.ply from its depth + nearest-camera-plane initialization.
+source_mode: native_hugsim
+source_path: ${HUGSIM_SOURCE}
+overrides: {}

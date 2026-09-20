@@ -1,0 +1,12 @@
+# Adapter experiment, not an exact reproduction of HUGSIM's preprocessing.
+source_mode: shared_rogs
+prepared_root: ../../data/hugsim_shared
+mask_policy: rogs
+crop_top_half: true
+split: every_fifth_per_camera
+initialization:
+  mode: rogs_lidar_projected
+  max_points: 200000
+  camera_height: auto_lidar
+# Original HUGSIM ground optimizer, loss and densification defaults remain intact.
+overrides: {}

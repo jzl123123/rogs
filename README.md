@@ -108,6 +108,22 @@ rogs segment --config configs/nuscenes.yaml \
 
 当前候选 Swin-L 配置的测试尺寸上下限均为 2048，1600×900 输入实际缩放到约 2048×1152，且逐张推理。首次生成标签仍可能很慢，尚无本项目远端实测速度。控制台及 `segmentation_manifest.json` 的 `last_run` 记录缓存/新处理帧数、预检查、模型初始化、读图、推理、写标签及总耗时；`prediction_seconds` 包含 argmax 和回传 CPU，`end_to_end_images_per_second` 是本次新处理帧数除以总耗时（包括预检查、初始化）。中断后再次运行可复用已完整写出的标签。没有启用 AMP、降分辨率或更换模型，以免引入额外的标签差异。
 
+## HUGSIM 地面后端
+
+已接入 HUGSIM 独立地面训练后端，支持共享 RoGS 的 nuScenes 索引、Mapillary 分割缓存、缩放裁剪和地面 mask，也支持已有 HUGSIM 原生预处理目录。专用 gsplat/GLM 源码已锁定到 `thirdparty`；因 PyTorch 版本不同，使用独立 `rogs-hugsim` 环境。
+
+```bash
+conda env create -f environment-hugsim.yml
+conda activate rogs-hugsim
+python tools/install_hugsim.py
+rogs hugsim-prepare --config configs/nuscenes.yaml --profile configs/hugsim/shared_nusc.yaml
+rogs hugsim-train --config configs/nuscenes.yaml --profile configs/hugsim/shared_nusc.yaml --dry-run
+rogs hugsim-train --config configs/nuscenes.yaml --profile configs/hugsim/shared_nusc.yaml
+python -m rogs.hugsim.export --run outputs/<HUGSIM运行目录> --resolution 0.05
+```
+
+共享模式先完成上面的 RoGS 标签与道路 PLY 预处理。它使用 LiDAR 道路点作为初始化来源，再施加 HUGSIM 平面投影；并不等价于原论文的单目深度初始化。20 通道语义、训练帧划分和评测指标也有独立口径，详见 [HUGSIM 集成说明](docs/HUGSIM.md)。当前已通过源码与 CPU 数据转换检查，尚未完成 GPU 编译、训练和地图导出实测。
+
 ## 算法对齐与输出
 
 ```bash

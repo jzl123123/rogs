@@ -37,6 +37,37 @@
         "pytorch3d"
       ],
       "tree_sha256": "adb517dceb98a085c4303d5029bbeb86becd6aa1db3d35622412814fa04d1e7c"
+    },
+    "HUGSIM": {
+      "repository": "hyzhou404/HUGSIM",
+      "commit": "62c690d39fd90020e68a196bd8bcc1c4d4191f2e",
+      "archive_sha256": "d6c97d6905b7f27973eb36f20b6a7415523f3a26cf74e88347010eac94c5d707",
+      "sparse_directories": [
+        "scene",
+        "utils",
+        "gaussian_renderer",
+        "configs",
+        "submodules",
+        "data/nusc",
+        "data/utils/merge_depth_ground.py",
+        "data/README.md"
+      ],
+      "tree_sha256": "e15d09320b282d9458f1059291df69e6bc4311b0d87f9cc5a9d253ba4c82161e"
+    },
+    "HUGSIM_splat": {
+      "repository": "hyzhou404/HUGSIM_splat",
+      "commit": "88f2a40c4e2f6bafde2beeaba6c43bbb0ccb1f5f",
+      "archive_sha256": "4187202a16dff7b753f172e436eaa15f44121e0429d573b070d4f26c97f26959",
+      "sparse_directories": [
+        "gsplat"
+      ],
+      "tree_sha256": "7747bac035bbaf58992de03d7a53a4bc5602720d9f32679162cfea1d4f33aa3a"
+    },
+    "hugsim_glm": {
+      "repository": "g-truc/glm",
+      "commit": "45008b225e28eb700fa0f7d3ff69b7c1db94fadf",
+      "archive_sha256": "e5b0c63e2d201cc6e1b29943ecd917042ff9667f724be6e017429bcc05efdeaa",
+      "tree_sha256": "5ac133c5fc1f1a9746a9ee0c0413808dd6eaa42729f4e0e91bf24d4f319d01b9"
     }
   }
 }

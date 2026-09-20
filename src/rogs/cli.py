@@ -12,13 +12,17 @@ from rogs.config import load_config
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="rogs", description="Reference-aligned RoGS workflow")
     sub = parser.add_subparsers(dest="command", required=True)
-    for command in ("train", "baseline", "preprocess", "segment", "check"):
+    for command in ("train", "baseline", "preprocess", "segment", "check", "hugsim-prepare", "hugsim-train"):
         item = sub.add_parser(command)
         item.add_argument("--config", required=True)
         if command == "segment":
             item.add_argument("--model-profile", required=True)
         if command == "check":
             item.add_argument("--stage", choices=("images", "labels", "train"), default="train")
+        if command.startswith("hugsim-"):
+            item.add_argument("--profile", default=str(Path(__file__).resolve().parents[2] / "configs/hugsim/shared_nusc.yaml"))
+            if command == "hugsim-train":
+                item.add_argument("--dry-run", action="store_true", help="Validate inputs and show resolved settings without CUDA")
     doctor = sub.add_parser("doctor")
     doctor.add_argument("--smoke", action="store_true", help="Exercise CUDA RGB/semantic forward and backward")
     doctor.add_argument("--segmentation", action="store_true", help="Also load the local Mask2Former stack")
@@ -28,6 +32,16 @@ def main(argv=None):
             from rogs.diagnostics import diagnose
             return diagnose(args.smoke, args.segmentation)
         cfg = load_config(args.config)
+        if args.command.startswith("hugsim-"):
+            from rogs.hugsim.config import load_profile
+            profile = load_profile(args.profile)
+            if args.command == "hugsim-prepare":
+                from rogs.hugsim.data import prepare
+                prepare(cfg, profile)
+            else:
+                from rogs.hugsim.runner import launch
+                launch(cfg, profile, args.dry_run)
+            return
         if args.command == "segment":
             from rogs.segmentation import segment
             segment(cfg, args.model_profile)

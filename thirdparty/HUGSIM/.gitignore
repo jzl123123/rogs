@@ -1,0 +1,15 @@
+*.pyc
+.vscode
+.idea
+.DS_Store
+.nfs*
+__pycache__
+*.pth
+output
+build
+shell
+private
+apex
+# pixi environments
+.pixi
+*.egg-info

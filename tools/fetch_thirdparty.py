@@ -33,10 +33,11 @@ def extract(archive, destination, sparse_directories=None):
             if len(rel.parts) < 2:
                 continue
             # Sparse vendor layouts retain all root files plus explicitly selected directories.
-            if sparse_directories is not None and len(rel.parts) > 2 and rel.parts[1] not in sparse_directories:
-                continue
-            if sparse_directories is not None and entry.is_dir() and rel.parts[1] not in sparse_directories:
-                continue
+            if sparse_directories is not None:
+                subpath = PurePosixPath(*rel.parts[1:]).as_posix()
+                selected = any(subpath == d or subpath.startswith(d + "/") for d in sparse_directories)
+                if (len(rel.parts) > 2 or entry.is_dir()) and not selected:
+                    continue
             target = destination.joinpath(*rel.parts[1:])
             if entry.is_dir():
                 target.mkdir(parents=True, exist_ok=True)

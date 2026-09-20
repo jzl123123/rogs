@@ -1,0 +1,73 @@
+[
+  {
+    "source": "utils/general_utils.py",
+    "target": "general_utils.py",
+    "symbols": null,
+    "source_sha256": "c575e07c745bebc2e6ae5e2edc334ffb81f19e84056604a25a9a404cb2172d97"
+  },
+  {
+    "source": "utils/system_utils.py",
+    "target": "system_utils.py",
+    "symbols": null,
+    "source_sha256": "07792cc259d433a6f58c3817508e7731d6064bba3c7a03d080f33840576f9667"
+  },
+  {
+    "source": "utils/sh_utils.py",
+    "target": "sh_utils.py",
+    "symbols": null,
+    "source_sha256": "7d1ff267546390635e6d1f68c4f88c4a8b052482d5c9be1d32f06bc69e9a96e7"
+  },
+  {
+    "source": "utils/graphics_utils.py",
+    "target": "graphics_utils.py",
+    "symbols": null,
+    "source_sha256": "d5ded248d8fc493a2579f7e55f620de1965e33361708cc9547274311eec3050a"
+  },
+  {
+    "source": "utils/loss_utils.py",
+    "target": "loss_utils.py",
+    "symbols": null,
+    "source_sha256": "a13271b096dfbb0c01d411f3d70e33526b9203634c32882cb221d45c061e8f5c"
+  },
+  {
+    "source": "scene/ground_model.py",
+    "target": "ground_model.py",
+    "symbols": null,
+    "source_sha256": "c4111fe0addcdf62841ab52c2eeeeb37e2f08c9c8764832e9b2bc2459a0eb0a6"
+  },
+  {
+    "source": "scene/cameras.py",
+    "target": "cameras.py",
+    "symbols": null,
+    "source_sha256": "8a1d10518fd282599e17d1ae3d91201124e2a357144968480c69acca283cfd1a"
+  },
+  {
+    "source": "utils/dataset.py",
+    "target": "upstream_dataset.py",
+    "symbols": null,
+    "source_sha256": "6c32a2cdaf33c1b1af24a99de946370e2bc1ed84f2d439919b4d4c92b8efa551"
+  },
+  {
+    "source": "gaussian_renderer/__init__.py",
+    "target": "render.py",
+    "symbols": [
+      "render_ground"
+    ],
+    "source_sha256": "303918d0097d3759f960a663bd05255ecbb402009cf96117fe2e49ba9a225c22"
+  },
+  {
+    "source": "scene/dataset_readers.py",
+    "target": "ply.py",
+    "symbols": [
+      "fetchPly",
+      "storePly"
+    ],
+    "source_sha256": "72653af4082f8e20568513a688dac7c3afa9e6429be26efaba96d8d379fbe89c"
+  },
+  {
+    "source": "train_ground.py",
+    "target": "train.py",
+    "symbols": null,
+    "source_sha256": "af260fd9788836ff34d133106572a88d2e540379a676481f44125e5d151a8e0a"
+  }
+]

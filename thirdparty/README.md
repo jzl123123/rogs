@@ -10,6 +10,9 @@
 - `pytorch3d`：V0.7.8 的完整 `pytorch3d/` 包和根目录构建/许可文件；未打包上游示例媒体、文档网站和测试资源。RoGS 使用的近邻、点云渲染和旋转代码保持原样，稀疏目录规则记入来源锁。
 - `_build`：自动生成且可重建的源码副本；构建产物不纳入源校验。
 - `weights`：本地权重文件位置。
+- `HUGSIM`：官方地面训练所需的稀疏源码快照；根文件及原训练代码保留，详见锁文件中的目录清单。
+- `HUGSIM_splat`：HUGSIM 锁文件指定的专用 gsplat，支持 20 通道语义；不与 RoGS 的栅格器互换。
+- `hugsim_glm`：HUGSIM_splat 实际引用的 GLM gitlink，独立于 RoGS 的 GLM。
 
 校验：`python tools/fetch_thirdparty.py --verify`。若目录缺失，可以运行同一命令去掉 `--verify`，按锁定提交恢复；已有且改动的目录不会被覆盖。
 

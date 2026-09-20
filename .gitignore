@@ -9,7 +9,7 @@ __pycache__/
 build/
 dist/
 outputs/
-data/
+/data/
 thirdparty/_build/
 thirdparty/weights/*
 !thirdparty/weights/README.md
